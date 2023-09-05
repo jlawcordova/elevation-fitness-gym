@@ -22,8 +22,9 @@ const config: Config = {
           primary: "#B3161F",
           secondary: "#f000b8",
           accent: "#1dcdbc",
-          neutral: "#f3f4f6",
+          neutral: "#FFFFFF",
           "base-100": "#1D1D1D",
+          "base-content": "#FFFFFF",
           info: "#3abff8",
           success: "#36d399",
           warning: "#fbbd23",
@@ -32,6 +33,6 @@ const config: Config = {
       },
     ],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
 export default config;
