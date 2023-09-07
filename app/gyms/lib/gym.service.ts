@@ -29,7 +29,7 @@ export const GetGyms = cache((): Promise<Gym[]> => {
   const promise = new Promise<Gym[]>((resolve) => {
     setTimeout(() => {
       resolve(mockGyms);
-    });
+    }, 5000);
   });
 
   return promise;

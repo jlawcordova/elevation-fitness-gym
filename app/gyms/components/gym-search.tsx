@@ -12,7 +12,7 @@ export default function GymSearch({ gyms }: { gyms: Gym[] }) {
   }
 
   return (
-    <div className="py-8 min-h-[calc(100vh-4rem)] bg-base-200">
+    <div>
       <GymList
         gyms={gyms}
         selectedGym={selectedGym}
