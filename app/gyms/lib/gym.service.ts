@@ -25,12 +25,14 @@ const mockGyms: Gym[] = [
   },
 ];
 
-export const GetGyms = cache((): Promise<Gym[]> => {
+export const GetGyms = cache(async (): Promise<Gym[]> => {
   const promise = new Promise<Gym[]>((resolve) => {
     setTimeout(() => {
       resolve(mockGyms);
     }, 5000);
   });
 
-  return promise;
+  const gyms = await promise;
+
+  return gyms;
 });
