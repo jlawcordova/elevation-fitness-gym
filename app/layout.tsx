@@ -2,10 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 const roboto_condensed = Roboto_Condensed({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${roboto_condensed.className}`}>
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );

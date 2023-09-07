@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <div className="sticky top-0 navbar bg-base-100 shadow-sm">
+    <div className="sticky top-0 z-10 navbar bg-base-100 shadow-sm">
       <div className="flex-1">
         <Link href="/" className="p-2 flex">
           <Image
