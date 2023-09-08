@@ -4,6 +4,8 @@ import { Roboto_Condensed } from "next/font/google";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
+export const runtime = "edge";
+
 const roboto_condensed = Roboto_Condensed({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
