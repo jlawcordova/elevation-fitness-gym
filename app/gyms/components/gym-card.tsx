@@ -1,4 +1,3 @@
-import { Transition } from '@headlessui/react'
 import Gym from "../lib/gym.interface";
 
 export default function GymCard({
@@ -15,11 +14,10 @@ export default function GymCard({
   }
 
   return (
-
     <div
       className={`${
         selected ? "bg-primary" : "bg-neutral"
-      } m-4 card md:w-96 cursor-pointer shadow-xl`}
+      } m-4 card md:w-96 cursor-pointer shadow-xl transition-colors`}
       onClick={handleCardClick}
     >
       <div className="card-body">
