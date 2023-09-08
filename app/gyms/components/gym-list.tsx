@@ -22,9 +22,10 @@ export function GymList({
           key={i}
           appear={true}
           show={true}
-          enter="transition-opacity duration-200"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
+          enter="transition duration-200"
+          enterFrom="opacity-0 -translate-x-8"
+          enterTo="opacity-100 translate-x-0"
+          style={{ transitionDelay: `${i * 50}ms` }}
         >
           <GymCard
             gym={gym}
