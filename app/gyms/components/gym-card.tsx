@@ -1,3 +1,4 @@
+import { Transition } from '@headlessui/react'
 import Gym from "../lib/gym.interface";
 
 export default function GymCard({
@@ -14,6 +15,7 @@ export default function GymCard({
   }
 
   return (
+
     <div
       className={`${
         selected ? "bg-primary" : "bg-neutral"

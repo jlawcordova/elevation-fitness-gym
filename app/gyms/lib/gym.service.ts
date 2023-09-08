@@ -29,7 +29,7 @@ export const GetGyms = cache(async (): Promise<Gym[]> => {
   const promise = new Promise<Gym[]>((resolve) => {
     setTimeout(() => {
       resolve(mockGyms);
-    }, 5000);
+    }, 200);
   });
 
   const gyms = await promise;
