@@ -19,14 +19,14 @@ export function GymList({
     <div className="m-4">
       {gyms.map((gym, i) => (
         <Transition
+          key={i}
           appear={true}
           show={true}
-          enter={`transition-opacity duration-200 delay-[${i * 100}ms]`}
+          enter="transition-opacity duration-200"
           enterFrom="opacity-0"
           enterTo="opacity-100"
         >
           <GymCard
-            key={gym.name}
             gym={gym}
             selected={selectedGym?.name === gym.name}
             onSelect={handleGymSelect}
