@@ -4,17 +4,8 @@ export default function Footer() {
   return (
     <footer className="footer footer-center p-10 bg-base-100 text-base-content rounded">
       <nav className="grid grid-flow-col gap-4">
-        <Link href="" className="link link-hover">
-          About us
-        </Link>
-        <Link href="" className="link link-hover">
-          Contact
-        </Link>
-        <Link href="" className="link link-hover">
-          Jobs
-        </Link>
-        <Link href="" className="link link-hover">
-          Press kit
+        <Link href="/gyms" className="link link-hover">
+          Find a Gym
         </Link>
       </nav>
       <nav>

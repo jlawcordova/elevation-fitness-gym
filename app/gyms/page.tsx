@@ -7,7 +7,7 @@ export default async function Gyms() {
   const gyms: Gym[] = await GetGyms();
 
   return (
-    <div className="py-8 min-h-[calc(100vh-4rem)] bg-base-200">
+    <div className="min-h-[calc(100vh-4rem)] bg-base-200">
       <GymSearch gyms={gyms} />
     </div>
   );
