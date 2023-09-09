@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="max-w-3xl text-6xl md:text-8xl">
           <h1
             className="mb-16 uppercase font-normal leading-tight drop-shadow-2xl"
-            style={{ textShadow: "0px 4px 12px #18181b;" }}
+            style={{ textShadow: "0px 4px 12px #18181b" }}
           >
             <span className="text-primary font-extrabold">Elevate</span>
             <br />
