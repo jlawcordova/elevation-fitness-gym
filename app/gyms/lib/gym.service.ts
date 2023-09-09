@@ -15,6 +15,10 @@ const mockGyms: Gym[] = [
     contact: {
       mobile: "(+63)917 100 2469",
     },
+    location: {
+      lat: 7.076738,
+      lng: 125.616227,
+    },
   },
   {
     name: "Buhangin",
@@ -23,6 +27,10 @@ const mockGyms: Gym[] = [
     },
     contact: {
       mobile: "(+63)917 112 5912",
+    },
+    location: {
+      lat: 7.104413,
+      lng: 125.613956,
     },
   },
   {
@@ -34,6 +42,10 @@ const mockGyms: Gym[] = [
     contact: {
       mobile: "(+63)917 102 0703",
     },
+    location: {
+      lat: 7.052437,
+      lng: 125.591072,
+    },
   },
   {
     name: "Lanang",
@@ -43,6 +55,10 @@ const mockGyms: Gym[] = [
     },
     contact: {
       mobile: "(+63)917 112 5912",
+    },
+    location: {
+      lat: 7.099748,
+      lng: 125.628202,
     },
   },
 ];

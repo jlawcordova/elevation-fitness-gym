@@ -9,9 +9,9 @@ export default function GymCard({
   selected: boolean;
   onSelect: (gym: Gym) => void;
 }) {
-  function handleCardClick(): void {
+  const handleCardClick = () => {
     onSelect(gym);
-  }
+  };
 
   return (
     <div

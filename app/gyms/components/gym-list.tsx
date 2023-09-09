@@ -11,9 +11,9 @@ export function GymList({
   selectedGym?: Gym;
   onGymSelect: (gym: Gym) => void;
 }) {
-  function handleGymSelect(gym: Gym) {
+  const handleGymSelect = (gym: Gym) => {
     onGymSelect(gym);
-  }
+  };
 
   return (
     <div className="mx-4">
