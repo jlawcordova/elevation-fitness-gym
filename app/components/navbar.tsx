@@ -30,7 +30,7 @@ export default function Navbar() {
         </ul>
       </div>
       <Link href="/join">
-        <button className="btn btn-primary">Join Now</button>
+        <button className="btn btn-primary rounded-none">Join Now</button>
       </Link>
     </div>
   );

@@ -12,15 +12,17 @@ export default function Hero() {
         </video>
       </div>
       <div className="hero-content text-center">
-        <div className="max-w-3xl">
-          <h1 className="mb-16 text-6xl md:text-8xl uppercase font-bold drop-shadow-2xl">
-            <span className="text-primary">Elevate</span>
+        <div className="max-w-3xl text-6xl md:text-8xl">
+          <h1
+            className="mb-16 uppercase font-normal leading-tight drop-shadow-2xl"
+            style={{ textShadow: "0px 4px 12px #18181b;" }}
+          >
+            <span className="text-primary font-extrabold">Elevate</span>
             <br />
-            your potential.
+            <span className="block">your potential.</span>
+            <span className="">Level up your</span>
             <br />
-            level up your
-            <br />
-            <span className="text-primary">fitness.</span>
+            <span className="text-primary font-extrabold">fitness.</span>
           </h1>
         </div>
       </div>
