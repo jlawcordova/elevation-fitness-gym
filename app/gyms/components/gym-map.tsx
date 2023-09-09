@@ -47,8 +47,8 @@ export default function GymMap({
             selectedGym === undefined
               ? undefined
               : {
-                  lat: selectedGym?.location.lat - 0.01,
-                  lng: selectedGym?.location.lng - 0.025,
+                  lat: selectedGym?.location.lat,
+                  lng: selectedGym?.location.lng,
                 }
           }
           options={createMapOptions}

@@ -15,21 +15,21 @@ export default function GymSearch({ gyms }: { gyms: Gym[] }) {
   }
 
   return (
-    <div className="md:grid md:grid-rows-1 md:grid-cols-8 lg:grid-cols-12 md:gap-4">
-      <div className="pt-8 mx-4 mb-6 z-10 md:max-h-0 md:order-2 md:row-start-1 md:col-start-5 md:col-span-4 lg:col-start-6 lg:col-span-6">
+    <div className="md:grid lg:grid-cols-12 lg:gap-4">
+      <div className="pt-8 mx-4 mb-6 z-10 lg:max-h-0 lg:order-2 lg:row-start-1 lg:col-start-6 lg:col-span-6">
         <h1 className="text-4xl font-bold mb-2">
           Time to elevate your fitness.
         </h1>
         <p>Find a gym near you to view available membership options.</p>
       </div>
-      <div className="z-10 overflow-auto md:max-h-[calc(100vh-4rem)] md:pt-8 md:row-start-1 md:col-start-1 md:w-[26rem]">
+      <div className="z-10 overflow-auto lg:max-h-[calc(100vh-4rem)] lg:pt-8 lg:row-start-1 lg:col-start-1 lg:w-[26rem]">
         <GymList
           gyms={gyms}
           selectedGym={selectedGym}
           onGymSelect={handleGymSelect}
         />
       </div>
-      <div className="hidden md:block md:row-start-1 md:col-start-1 md:col-span-8 lg:col-start-1 lg:col-span-12">
+      <div className="hidden lg:block lg:row-start-1 lg:col-start-1 lg:col-span-12">
         <GymMap
           gyms={gyms}
           selectedGym={selectedGym}

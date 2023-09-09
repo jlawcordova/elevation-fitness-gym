@@ -17,7 +17,7 @@ export default function GymCard({
     <div
       className={`${
         selected ? "bg-primary" : "bg-neutral"
-      } mb-4 card md:w-96 rounded-none cursor-pointer shadow-xl transition-colors`}
+      } mb-4 card lg:w-96 rounded-none cursor-pointer shadow-xl transition-colors`}
       onClick={handleCardClick}
     >
       <div className="card-body">
