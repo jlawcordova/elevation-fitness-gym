@@ -28,7 +28,7 @@ export default function FeaturesSection() {
   return (
     <>
       <div
-        className={`${styles.featuresSection} py-8 lg:py-16 lg:flex lg:flex-row justify-center bg-cover bg-left-top`}
+        className={`${styles.featuresSection} py-4 lg:py-16 lg:flex lg:flex-row justify-center bg-cover bg-left-top`}
       >
         {features.map((feature, index) => (
           <Feature key={index} {...feature}></Feature>

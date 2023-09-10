@@ -14,7 +14,14 @@ export default function Feature({
   image: string;
 }) {
   const [hovered, setHovered] = useState<boolean>(false);
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+
+  // Ignore hover on smaller (md breakpoint) screens.
+  // Check window availability to avoid getting triggered on server.
+  let [innerWidth, innerHeight]: number[] = [0, 0];
+  if (typeof window !== undefined) {
+    [innerWidth, innerHeight] = [window.innerWidth, window.innerHeight];
+  }
+  const windowSize = useRef([innerWidth, innerHeight]);
 
   const handleMouseOver = () => {
     if (windowSize.current[0] > 1024) {
@@ -29,13 +36,13 @@ export default function Feature({
   return (
     <>
       <div
-        className={`${styles.featureMask} m-4 lg:-ml-16 first:lg:ml-0 h-[320px] lg:w-[380px] lg:h-[340px] bg-cover bg-no-repeat cursor-pointer hover:scale-110`}
+        className={`${styles.featureMask} m-8 lg:-ml-16 first:lg:ml-0 h-[320px] lg:w-[380px] lg:h-[340px] bg-cover bg-no-repeat cursor-pointer lg:hover:scale-110`}
         style={{ backgroundImage: `url(${image})` }}
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="w-full h-full bg-primary bg-opacity-0 flex items-center hover:bg-opacity-75">
-          <div className="mx-8 lg:ml-28 lg:mr-16">
+        <div className="w-full h-full bg-base-100 bg-opacity-50 flex items-center lg:bg-primary lg:bg-opacity-0 lg:hover:bg-opacity-75">
+          <div className="mx-8 lg:ml-28 lg:mr-16 w-full">
             <h2
               className={`mb-2 text-4xl font-bold uppercase ${
                 hovered ? "lg:text-2xl" : ""
