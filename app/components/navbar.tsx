@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Button from "./button";
 
 export default function Navbar() {
   return (
@@ -30,7 +31,7 @@ export default function Navbar() {
         </ul>
       </div>
       <Link href="/join">
-        <button className="btn btn-primary rounded-none">Join Now</button>
+        <Button>Join Now</Button>
       </Link>
     </div>
   );
