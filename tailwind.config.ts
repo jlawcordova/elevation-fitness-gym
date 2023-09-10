@@ -23,7 +23,8 @@ const config: Config = {
       {
         light: {
           primary: "#B3161F",
-          secondary: "#f000b8",
+          secondary: "#f3f4f6",
+          "secondary-focus": "#d1d5db",
           accent: "#1dcdbc",
           neutral: "#27272a",
           "neutral-focus": "#52525b",

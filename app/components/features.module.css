@@ -1,0 +1,9 @@
+@media (min-width: 1024px) and (orientation: landscape) {
+  .featureMask {
+    -webkit-mask-image: url("/feature/feature-mask.svg");
+    mask-image: url("/feature/feature-mask.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+}

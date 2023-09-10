@@ -1,3 +1,9 @@
-export default function Button({ children }: { children: React.ReactNode }) {
-  return <button className="btn btn-primary rounded-none">{children}</button>;
+export default function Button({
+  children,
+  type = "primary",
+}: {
+  children: React.ReactNode;
+  type?: "primary" | "secondary";
+}) {
+  return <button className={`btn btn-${type} rounded-none`}>{children}</button>;
 }
