@@ -6,4 +6,8 @@
     mask-repeat: no-repeat;
     mask-size: contain;
   }
+
+  .featuresSection {
+    background-image: url("/feature/features-background.png");
+  }
 }

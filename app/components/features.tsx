@@ -28,7 +28,9 @@ const features = [
 export default function FeaturesSection() {
   return (
     <>
-      <div className="lg:my-24 lg:flex lg:flex-row justify-center">
+      <div
+        className={`${styles.featuresSection} lg:py-16 lg:flex lg:flex-row justify-center bg-cover bg-left-top`}
+      >
         {features.map((feature, index) => (
           <Feature key={index} {...feature}></Feature>
         ))}
@@ -59,7 +61,7 @@ function Feature({
   return (
     <>
       <div
-        className={`${styles.featureMask} m-4 h-[320px] lg:w-[380px] lg:h-[340px] bg-cover bg-no-repeat cursor-pointer`}
+        className={`${styles.featureMask} m-4 lg:-ml-16 first:lg:ml-0 h-[320px] lg:w-[380px] lg:h-[340px] bg-cover bg-no-repeat cursor-pointer hover:scale-110`}
         style={{ backgroundImage: `url(${image})` }}
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
