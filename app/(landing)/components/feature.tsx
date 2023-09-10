@@ -2,7 +2,7 @@
 
 import Button from "@/app/components/button";
 import styles from "./features.module.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Feature({
   name,
@@ -14,9 +14,12 @@ export default function Feature({
   image: string;
 }) {
   const [hovered, setHovered] = useState<boolean>(false);
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
 
   const handleMouseOver = () => {
-    setHovered(true);
+    if (windowSize.current[0] > 1024) {
+      setHovered(true);
+    }
   };
 
   const handleMouseLeave = () => {
