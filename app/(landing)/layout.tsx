@@ -1,10 +1,8 @@
-import "./globals.css";
+import "../globals.css";
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
-
-export const runtime = "edge";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const roboto_condensed = Roboto_Condensed({
   subsets: ["latin"],

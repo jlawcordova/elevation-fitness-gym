@@ -1,5 +1,5 @@
+import Button from "@/app/components/button";
 import Link from "next/link";
-import Button from "./button";
 
 export default function Hero() {
   return (

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Button from "./button";
 import styles from "./features.module.css";
+import Button from "@/app/components/button";
 
 const features = [
   {
