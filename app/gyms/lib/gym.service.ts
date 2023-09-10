@@ -67,7 +67,7 @@ export const GetGyms = cache(async (): Promise<Gym[]> => {
   const promise = new Promise<Gym[]>((resolve) => {
     setTimeout(() => {
       resolve(mockGyms);
-    }, 200);
+    }, 0);
   });
 
   const gyms = await promise;
