@@ -6,6 +6,7 @@ export default interface Gym {
   };
   contact?: {
     mobile?: string;
+    tel?: string;
   };
   location: {
     lat: number;

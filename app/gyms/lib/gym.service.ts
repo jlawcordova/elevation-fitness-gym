@@ -13,7 +13,8 @@ const mockGyms: Gym[] = [
       line2: "Corner Sta. Ana Avenue, Leon Guerrero St.",
     },
     contact: {
-      mobile: "(+63)917 100 2469",
+      mobile: "09171002469",
+      tel: "(082) 3279621",
     },
     location: {
       lat: 7.076738,
@@ -26,7 +27,8 @@ const mockGyms: Gym[] = [
       line1: "Buhangin-Lapanday Road, KM 5",
     },
     contact: {
-      mobile: "(+63)917 112 5912",
+      mobile: "09171125912",
+      tel: "(082) 3313806",
     },
     location: {
       lat: 7.104413,
@@ -40,7 +42,8 @@ const mockGyms: Gym[] = [
       line2: "",
     },
     contact: {
-      mobile: "(+63)917 102 0703",
+      mobile: "09171020703",
+      tel: "(082) 3312766",
     },
     location: {
       lat: 7.052437,
@@ -54,7 +57,8 @@ const mockGyms: Gym[] = [
       line2: "",
     },
     contact: {
-      mobile: "(+63)917 112 5912",
+      mobile: "09171125912",
+      tel: "(082) 3080589",
     },
     location: {
       lat: 7.099748,

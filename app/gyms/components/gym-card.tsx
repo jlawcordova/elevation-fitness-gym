@@ -1,4 +1,5 @@
 import Gym from "../lib/gym.interface";
+import { PhoneIcon, DevicePhoneMobileIcon } from "@heroicons/react/24/solid";
 
 export default function GymCard({
   gym,
@@ -17,13 +18,32 @@ export default function GymCard({
     <div
       className={`${
         selected ? "bg-primary" : "bg-neutral"
-      } mb-4 card lg:w-96 rounded-none cursor-pointer shadow-xl transition-colors`}
+      } mb-4 card rounded-none cursor-pointer shadow-xl transition-colors`}
       onClick={handleCardClick}
     >
       <div className="card-body">
         <h2 className="card-title">{gym.name}</h2>
-        <p>{gym.address.line1}</p>
-        <p>{gym.address.line2 ?? "\u00A0"}</p>
+        <p className="leading-tight">{gym.address.line1}</p>
+        <p className="leading-tight mb-2">{gym.address.line2 ?? "\u00A0"}</p>
+        <address className="flex not-italic">
+          <div className="flex items-center w-32">
+            <PhoneIcon className="w-5 h-5 pr-1 inline" />
+            <p>{gym.contact?.tel}</p>
+          </div>
+          <div className="flex items-center ml-4">
+            <DevicePhoneMobileIcon className="w-5 h-5 pr-1 inline" />
+            <p>{gym.contact?.mobile}</p>
+          </div>
+        </address>
+        {selected ? (
+          <div className="card-actions w-full md:w-96 lg:w-full block mt-4">
+            <button className="btn btn-secondary w-full md:w-96 lg:w-full rounded-none">
+              Join Here
+            </button>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

@@ -21,9 +21,9 @@ export default function GymSearch({ gyms }: { gyms: Gym[] }) {
         <h1 className="text-4xl font-bold mb-2">
           Time to elevate your fitness.
         </h1>
-        <p>Find a gym near you to view available membership options.</p>
+        <p>Choose a gym near you to view available membership options.</p>
       </div>
-      <div className="z-10 overflow-auto lg:max-h-[calc(100vh-4rem)] lg:pt-8 lg:row-start-1 lg:col-start-1 lg:w-[26rem]">
+      <div className="z-10 overflow-auto lg:max-h-[calc(100vh-4rem)] lg:row-start-1 lg:col-start-1 lg:w-[24rem]">
         <GymList
           gyms={gyms}
           selectedGym={selectedGym}
