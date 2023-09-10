@@ -1,45 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import styles from "./features.module.css";
 import Button from "@/app/components/button";
+import styles from "./features.module.css";
+import { useState } from "react";
 
-const features = [
-  {
-    name: "Elevate in the Open",
-    description:
-      "Who said you can't enjoy the breeze while you're breaking a sweat? Step into our open-air gym equipped with modern fitness gear.",
-    image: "/feature/open-air-feature.png",
-  },
-  {
-    name: "Affordable Fitness",
-    description:
-      "Elevation Fitness Gym promises affordable fitness for all - the gym newbie or the seasoned fitness enthusiast.",
-    image: "/feature/affordable-feature.png",
-  },
-  {
-    name: "Yearly Gains at Daily Prices",
-    description:
-      "Maximize your gains with our cost-effective yearly memberships. Train consistently, save effectively.",
-    image: "/feature/yearly-feature.png",
-  },
-];
-
-export default function FeaturesSection() {
-  return (
-    <>
-      <div
-        className={`${styles.featuresSection} lg:py-16 lg:flex lg:flex-row justify-center bg-cover bg-left-top`}
-      >
-        {features.map((feature, index) => (
-          <Feature key={index} {...feature}></Feature>
-        ))}
-      </div>
-    </>
-  );
-}
-
-function Feature({
+export default function Feature({
   name,
   description,
   image,
