@@ -16,7 +16,8 @@ export default function GymSearch({ gyms }: { gyms: Gym[] }) {
 
   return (
     <div className="md:grid lg:grid-cols-12 lg:gap-4">
-      <div className="pt-8 mx-4 mb-6 z-10 lg:max-h-0 lg:order-2 lg:row-start-1 lg:col-start-6 lg:col-span-6">
+      <div className="hidden z-10 bg-gradient-to-b from-base-200 lg:block lg:row-start-1 lg:col-start-1 lg:col-span-12 h-32"></div>
+      <div className="pt-8 mx-4 mb-6 z-20 lg:max-h-0 lg:order-2 lg:row-start-1 lg:col-start-6 lg:col-span-6">
         <h1 className="text-4xl font-bold mb-2">
           Time to elevate your fitness.
         </h1>

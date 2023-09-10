@@ -10,13 +10,13 @@ export default function Navbar() {
             alt="Elevation fitness gym logo"
             src="/elevation-logo.svg"
             width={36}
-            height={0}
+            height={45}
           ></Image>
           <Image
             alt="Elevation fitness gym"
             src="/elevation-text.svg"
             width={150}
-            height={0}
+            height={45}
             priority={true}
             className="hidden md:block ml-2"
           ></Image>

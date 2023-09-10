@@ -28,6 +28,7 @@ export default function GymMap({
 
   const createMapOptions = (maps: any) => {
     return {
+      fullscreenControl: false,
       styles: DarkMapStyle,
     };
   };
