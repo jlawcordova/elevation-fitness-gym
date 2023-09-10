@@ -23,7 +23,7 @@ export default function GymMap({
       lat: 7.075478,
       lng: 125.585939,
     },
-    zoom: 13,
+    zoom: 14,
   };
 
   const createMapOptions = (maps: any) => {
@@ -43,7 +43,6 @@ export default function GymMap({
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
           // Center the map to a selected gym's location.
-          // A few offsets are applied to consider the overlapping sidebar.
           center={
             selectedGym === undefined
               ? undefined
