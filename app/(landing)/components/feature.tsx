@@ -2,7 +2,7 @@
 
 import Button from "@/app/components/button";
 import styles from "./features.module.css";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Feature({
   name,
@@ -14,17 +14,28 @@ export default function Feature({
   image: string;
 }) {
   const [hovered, setHovered] = useState<boolean>(false);
+  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
 
   // Ignore hover on smaller (md breakpoint) screens.
   // Check window availability to avoid getting triggered on server.
-  let [innerWidth, innerHeight]: number[] = [0, 0];
-  if (typeof window !== undefined) {
-    [innerWidth, innerHeight] = [window.innerWidth, window.innerHeight];
-  }
-  const windowSize = useRef([innerWidth, innerHeight]);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
 
   const handleMouseOver = () => {
-    if (windowSize.current[0] > 1024) {
+    if (windowWidth !== undefined && windowWidth > 1024) {
       setHovered(true);
     }
   };
