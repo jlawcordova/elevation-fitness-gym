@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Gym from "../lib/gym.interface";
+import Gym from "../../lib/gym.interface";
 
 export default function GymMapMarker({
   lat,

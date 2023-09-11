@@ -1,7 +1,7 @@
 "use client";
 
 import GoogleMapReact from "google-map-react";
-import Gym from "../lib/gym.interface";
+import Gym from "../../lib/gym.interface";
 import GymMapMarker from "./gym-map-marker";
 import { DarkMapStyle } from "../lib/dark-map-style.const";
 

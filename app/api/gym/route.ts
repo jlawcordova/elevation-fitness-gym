@@ -1,4 +1,4 @@
-import { GetGyms } from "@/app/gyms/lib/gym.service";
+import { GetGyms } from "@/app/lib/gym.service";
 import { NextResponse } from "next/server";
 
 export async function GET() {

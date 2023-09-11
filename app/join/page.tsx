@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-import Gym from "../gyms/lib/gym.interface";
+import Gym from "../lib/gym.interface";
 import JoinSteps from "./components/join-steps";
 import JoinGym from "./components/join-gym";
 import JoinPlan from "./components/join-plan";

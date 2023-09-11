@@ -1,5 +1,5 @@
 import { Transition } from "@headlessui/react";
-import Gym from "../lib/gym.interface";
+import Gym from "../../lib/gym.interface";
 import GymCard from "./gym-card";
 
 export function GymList({

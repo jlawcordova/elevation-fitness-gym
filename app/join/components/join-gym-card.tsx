@@ -1,6 +1,6 @@
 import { DevicePhoneMobileIcon, PhoneIcon } from "@heroicons/react/24/solid";
 
-import Gym from "@/app/gyms/lib/gym.interface";
+import Gym from "@/app/lib/gym.interface";
 
 export default function JoinGymCard({
   gym,

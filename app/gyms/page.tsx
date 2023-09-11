@@ -1,5 +1,5 @@
-import Gym from "./lib/gym.interface";
-import { GetGyms } from "./lib/gym.service";
+import Gym from "../lib/gym.interface";
+import { GetGyms } from "../lib/gym.service";
 
 import GymSearch from "./components/gym-search";
 

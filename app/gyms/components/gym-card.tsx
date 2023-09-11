@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Gym from "../lib/gym.interface";
+import Gym from "../../lib/gym.interface";
 import { PhoneIcon, DevicePhoneMobileIcon } from "@heroicons/react/24/solid";
 
 export default function GymCard({

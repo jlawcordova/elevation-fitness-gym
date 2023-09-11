@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { GymList } from "./gym-list";
-import Gym from "../lib/gym.interface";
+import Gym from "../../lib/gym.interface";
 import GymMap from "./gym-map";
 
 export default function GymSearch({ gyms }: { gyms: Gym[] }) {

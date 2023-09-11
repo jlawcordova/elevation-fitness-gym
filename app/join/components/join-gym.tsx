@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Loader from "@/app/components/loader";
 
-import Gym from "@/app/gyms/lib/gym.interface";
+import Gym from "@/app/lib/gym.interface";
 import JoinGymCard from "./join-gym-card";
 
 export default function JoinGym({ onJoin }: { onJoin: (gym: Gym) => void }) {
