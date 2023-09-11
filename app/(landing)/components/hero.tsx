@@ -7,9 +7,9 @@ export default function Hero() {
       <div className="relative w-full min-h-[calc(100vh-4rem)] -z-10 overflow-hidden">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover grayscale"
-          loop
-          autoPlay
-          muted
+          loop={true}
+          autoPlay={true}
+          muted={true}
         >
           <source src="/elevation-video.mov"></source>
         </video>
