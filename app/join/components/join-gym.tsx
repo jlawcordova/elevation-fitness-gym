@@ -1,11 +1,10 @@
 "use client";
 
-import Gym from "@/app/gyms/lib/gym.interface";
-import { DevicePhoneMobileIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
-import JoinGymCard from "./join-gym-card";
 import Loader from "@/app/components/loader";
-import Skeleton from "react-loading-skeleton";
+
+import Gym from "@/app/gyms/lib/gym.interface";
+import JoinGymCard from "./join-gym-card";
 
 export default function JoinGym({ onJoin }: { onJoin: (gym: Gym) => void }) {
   const [gyms, setGyms] = useState<Gym[] | undefined>(undefined);
