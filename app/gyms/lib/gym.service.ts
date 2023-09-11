@@ -7,6 +7,7 @@ export const revalidate = 60;
 
 const mockGyms: Gym[] = [
   {
+    id: "03aa91a6-0bae-462f-90b9-e3ba66d1bec8",
     name: "Sta. Ana",
     address: {
       line1: "6th floor, Alyvea Building Corporate Center",
@@ -22,6 +23,7 @@ const mockGyms: Gym[] = [
     },
   },
   {
+    id: "dcb99a2e-44c7-45e7-b32f-a50949a37a8b",
     name: "Buhangin",
     address: {
       line1: "Buhangin-Lapanday Road, KM 5",
@@ -36,6 +38,7 @@ const mockGyms: Gym[] = [
     },
   },
   {
+    id: "63e23fa6-d92b-4c1a-8a4a-99716b517ca3",
     name: "Ecoland",
     address: {
       line1: "Quimpo Blvd, Talomo",
@@ -51,6 +54,7 @@ const mockGyms: Gym[] = [
     },
   },
   {
+    id: "acd6dea8-e524-4050-8c67-30faba2e2fe7",
     name: "Lanang",
     address: {
       line1: "71 J.P. Laurel Ave, Agdao",
@@ -77,4 +81,23 @@ export const GetGyms = cache(async (): Promise<Gym[]> => {
   const gyms = await promise;
 
   return gyms;
+});
+
+export const GetGym = cache(async (id: string): Promise<Gym> => {
+  const promise = new Promise<Gym>((resolve, reject) => {
+    setTimeout(() => {
+      const gym = mockGyms.find((g) => g.id === id);
+
+      if (gym === undefined) {
+        reject({ errorCode: 404, error: "Gym not found." });
+        return;
+      }
+
+      resolve(gym);
+    }, 0);
+  });
+
+  const gym = await promise;
+
+  return gym;
 });

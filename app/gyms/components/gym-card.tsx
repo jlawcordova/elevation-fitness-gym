@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Gym from "../lib/gym.interface";
 import { PhoneIcon, DevicePhoneMobileIcon } from "@heroicons/react/24/solid";
 
@@ -37,9 +38,11 @@ export default function GymCard({
         </address>
         {selected ? (
           <div className="card-actions w-full md:w-96 lg:w-full block mt-4">
-            <button className="btn btn-secondary w-full md:w-96 lg:w-full rounded-none">
-              Join Here
-            </button>
+            <Link href={`/join?gymId=${gym.id}`}>
+              <button className="btn btn-secondary w-full md:w-96 lg:w-full rounded-none">
+                Join Here
+              </button>
+            </Link>
           </div>
         ) : (
           <></>
