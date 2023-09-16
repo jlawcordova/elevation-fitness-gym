@@ -8,10 +8,12 @@ import JoinSteps from "./components/join-steps";
 import JoinGym from "./components/join-gym";
 import JoinPlan from "./components/join-plan";
 import GymPlan from "../lib/gym-plan.interface";
+import JoinForm from "./components/join-form";
 
 enum JoinActionKind {
   joinGym,
   chooseGymPlan,
+  submit,
 }
 
 interface JoinActionPayload {
@@ -22,7 +24,7 @@ interface JoinActionPayload {
 
 interface JoinAction {
   type: JoinActionKind;
-  payload: JoinActionPayload;
+  payload?: JoinActionPayload;
 }
 
 interface JoinState {
@@ -45,15 +47,21 @@ function joinReducer(state: JoinState, action: JoinAction): JoinState {
       return {
         ...state,
         step: 1,
-        gymId: payload.gymId,
-        gym: payload.gym,
+        gymId: payload?.gymId,
+        gym: payload?.gym,
       };
       break;
     case JoinActionKind.chooseGymPlan:
       return {
         ...state,
         step: 2,
-        gymPlan: payload.gymPlan,
+        gymPlan: payload?.gymPlan,
+      };
+      break;
+    case JoinActionKind.submit:
+      return {
+        ...state,
+        step: 3,
       };
       break;
     default:
@@ -113,6 +121,12 @@ export default function Join() {
     });
   };
 
+  const handleSubmitSuccess = (): void => {
+    joinDispatch({
+      type: JoinActionKind.submit,
+    });
+  };
+
   const getJoinBody = (step: number): React.ReactNode => {
     switch (step) {
       case 0:
@@ -125,7 +139,13 @@ export default function Join() {
           ></JoinPlan>
         );
       case 2:
-        return <h1>Personal information section (coming soon!)</h1>;
+        return (
+          <JoinForm
+            gym={joinState.gym}
+            gymPlan={joinState.gymPlan}
+            onSubmitSuccess={handleSubmitSuccess}
+          ></JoinForm>
+        );
       default:
         return <></>;
     }
