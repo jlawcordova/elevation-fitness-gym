@@ -167,7 +167,9 @@ export default function Join() {
           <JoinSteps step={joinState.step}></JoinSteps>
         </div>
         <div className="md:flex md:justify-center">
-          <div className="p-4 pb-8 md:max-w-4xl">{joinBody}</div>
+          <div className="p-4 pb-8 md:max-w-3xl flex flex-col flex-1">
+            {joinBody}
+          </div>
         </div>
       </div>
     </>

@@ -14,7 +14,7 @@ export default function JoinGymCard({
   };
 
   return (
-    <div className="mb-4 md:mx-2 md:basis-2/5 card bg-neutral rounded-none">
+    <div className="md:flex-1 card bg-neutral rounded-none">
       <div className="card-body">
         <div className="card-title">{gym.name}</div>
         <p className="leading-tight">{gym.address.line1}</p>

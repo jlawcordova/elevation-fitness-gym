@@ -28,7 +28,7 @@ export default function JoinGym({ onJoin }: { onJoin: (gym: Gym) => void }) {
   return (
     <>
       <JoinHeader text={"Choose a branch you'd like to join."} />
-      <div className="md:flex md:flex-wrap md:justify-center">
+      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-4">
         {gyms?.map((gym, index) => (
           <JoinGymCard key={index} gym={gym} onJoin={handleJoin}></JoinGymCard>
         )) || (
