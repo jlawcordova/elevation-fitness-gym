@@ -50,6 +50,7 @@ export default function JoinForm({
             name="firstName"
             type="text"
             placeholder="Juan"
+            autoComplete="given-name"
             className="input mb-2 w-full rounded-none"
             required
           />
@@ -61,6 +62,7 @@ export default function JoinForm({
             name="lastName"
             type="text"
             placeholder="Dela Cruz"
+            autoComplete="family-name"
             className="input mb-2 w-full rounded-none"
             required
           />
@@ -71,6 +73,7 @@ export default function JoinForm({
             id="email"
             name="email"
             type="email"
+            autoComplete="email"
             placeholder="juan.delacruz@example.com"
             className="input mb-8 w-full rounded-none"
             required
