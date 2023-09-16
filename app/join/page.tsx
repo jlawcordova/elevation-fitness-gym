@@ -40,7 +40,8 @@ function joinReducer(state: JoinState, action: JoinAction): JoinState {
 
   window.scrollTo({
     top: 0,
-    behavior: "smooth",
+    left: 0,
+    behavior: "instant",
   });
 
   switch (type) {
