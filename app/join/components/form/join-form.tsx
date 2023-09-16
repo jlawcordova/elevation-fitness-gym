@@ -52,7 +52,6 @@ export default function JoinForm({
             placeholder="Juan"
             className="input mb-2 w-full rounded-none"
             required
-            autoFocus
           />
           <label htmlFor="lastName" className="label block">
             Last name
