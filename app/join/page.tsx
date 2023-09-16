@@ -35,6 +35,11 @@ interface JoinState {
 function joinReducer(state: JoinState, action: JoinAction): JoinState {
   const { type, payload } = action;
 
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
   switch (type) {
     case JoinActionKind.joinGym:
       return {
@@ -119,7 +124,6 @@ export default function Join() {
             onChoose={handleGymPlanChoose}
           ></JoinPlan>
         );
-
       case 2:
         return <h1>Personal information section (coming soon!)</h1>;
       default:
