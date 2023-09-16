@@ -34,6 +34,7 @@ const gymPlans: GymPlan[] = [
     description: "1-year subscription",
     rate: 700,
     features: [
+      "Welcome Workout",
       "Open-air Gym Facility",
       "Cardio and Strength Equipment",
       "Indoor Cycling",

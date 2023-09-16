@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Gym from "../lib/gym.interface";
@@ -50,10 +50,32 @@ export default function Join() {
   const gymIdSearchParam = searchParams.get("gymId");
 
   const [joinState, joinDispatch] = useReducer(joinReducer, {
+    // Move to step 1 immediately if user has provided a gymId via search params.
+    // This occurs in scenarios where the user has already selected a gym from
+    // another page (i.e. in app/gyms/page.tsx)
     step: gymIdSearchParam === null ? 0 : 1,
     gymId: gymIdSearchParam,
     gym: null,
   });
+
+  useEffect(() => {
+    async function getGym() {
+      const response = await fetch(`/api/gym/${gymIdSearchParam}`);
+      const gym: Gym = await response.json();
+
+      joinDispatch({
+        type: JoinActionKind.selectGym,
+        payload: {
+          gymId: gym.id,
+          gym: gym,
+        },
+      });
+    }
+
+    if (gymIdSearchParam !== null) {
+      getGym();
+    }
+  }, [gymIdSearchParam]);
 
   const handleGymJoin = (gym: Gym): void => {
     joinDispatch({
@@ -70,7 +92,11 @@ export default function Join() {
       case 0:
         return <JoinGym onJoin={handleGymJoin}></JoinGym>;
       case 1:
-        return <JoinPlan gym={joinState.gym as Gym}></JoinPlan>;
+        if (joinState.gym === null) {
+          return <></>;
+        }
+
+        return <JoinPlan gym={joinState.gym}></JoinPlan>;
       default:
         return <></>;
     }
