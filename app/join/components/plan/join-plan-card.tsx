@@ -32,7 +32,7 @@ export default function JoinPlanCard({
         <ul>
           {gymPlan.features.map((feature, index) => (
             <li key={index} className="flex gap-2">
-              <CheckIcon className="w-5 h-5 text-primary" /> {feature}
+              <CheckIcon className="w-5 h-5 text-primary shrink-0" /> {feature}
             </li>
           ))}
         </ul>
