@@ -13,7 +13,11 @@ export default function JoinPlanCard({
   };
 
   return (
-    <div className="card bg-base-100 rounded-none">
+    <div
+      className={`card bg-base-100 rounded-none ${
+        gymPlan.isPopular ? "order-1" : "order-2 md:order-1"
+      }`}
+    >
       <div className="card-body justify-start">
         <div className="mb-2 card-title flex justify-between">
           <h1 className="text-primary">{gymPlan.name}</h1>
