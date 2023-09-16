@@ -5,6 +5,7 @@ import Loader from "@/app/components/loader";
 
 import Gym from "@/app/lib/gym.interface";
 import JoinGymCard from "./join-gym-card";
+import JoinHeader from "./join-header";
 
 export default function JoinGym({ onJoin }: { onJoin: (gym: Gym) => void }) {
   const [gyms, setGyms] = useState<Gym[] | undefined>(undefined);
@@ -26,9 +27,7 @@ export default function JoinGym({ onJoin }: { onJoin: (gym: Gym) => void }) {
 
   return (
     <>
-      <h2 className="text-xl md:text-2xl mb-4 md:mb-8 md:text-center">
-        {"Choose a branch you'd like to join."}
-      </h2>
+      <JoinHeader text={"Choose a branch you'd like to join."} />
       <div className="md:flex md:flex-wrap md:justify-center">
         {gyms?.map((gym, index) => (
           <JoinGymCard key={index} gym={gym} onJoin={handleJoin}></JoinGymCard>

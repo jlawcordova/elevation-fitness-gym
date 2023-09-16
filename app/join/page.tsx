@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Gym from "../lib/gym.interface";
@@ -8,16 +8,61 @@ import JoinSteps from "./components/join-steps";
 import JoinGym from "./components/join-gym";
 import JoinPlan from "./components/join-plan";
 
+enum JoinActionKind {
+  selectGym,
+}
+
+interface JoinActionPayload {
+  gymId: string | null;
+  gym: Gym | null;
+}
+
+interface JoinAction {
+  type: JoinActionKind;
+  payload: JoinActionPayload;
+}
+
+interface JoinState {
+  step: number;
+  gymId: string | null;
+  gym: Gym | null;
+}
+
+function joinReducer(state: JoinState, action: JoinAction): JoinState {
+  const { type, payload } = action;
+
+  switch (type) {
+    case JoinActionKind.selectGym:
+      return {
+        ...state,
+        step: 1,
+        gymId: payload.gymId,
+        gym: payload.gym,
+      };
+      break;
+    default:
+      return state;
+  }
+}
+
 export default function Join() {
   const searchParams = useSearchParams();
   const gymIdSearchParam = searchParams.get("gymId");
 
-  const [step, setStep] = useState<number>(gymIdSearchParam === null ? 0 : 1);
-  const [gymId, setGymId] = useState<string | null>(gymIdSearchParam);
+  const [joinState, joinDispatch] = useReducer(joinReducer, {
+    step: gymIdSearchParam === null ? 0 : 1,
+    gymId: gymIdSearchParam,
+    gym: null,
+  });
 
   const handleGymJoin = (gym: Gym): void => {
-    setGymId(gym.id);
-    setStep(1);
+    joinDispatch({
+      type: JoinActionKind.selectGym,
+      payload: {
+        gymId: gym.id,
+        gym: gym,
+      },
+    });
   };
 
   const getJoinBody = (step: number): React.ReactNode => {
@@ -25,13 +70,13 @@ export default function Join() {
       case 0:
         return <JoinGym onJoin={handleGymJoin}></JoinGym>;
       case 1:
-        return <JoinPlan></JoinPlan>;
+        return <JoinPlan gym={joinState.gym as Gym}></JoinPlan>;
       default:
         return <></>;
     }
   };
 
-  const joinBody = getJoinBody(step);
+  const joinBody = getJoinBody(joinState.step);
 
   return (
     <>
@@ -45,7 +90,7 @@ export default function Join() {
           </p>
         </div>
         <div className="pb-8 md:pb-12 flex justify-center items-center">
-          <JoinSteps step={step}></JoinSteps>
+          <JoinSteps step={joinState.step}></JoinSteps>
         </div>
         <div className="md:flex md:justify-center">
           <div className="p-4 pb-8 md:max-w-4xl">{joinBody}</div>
