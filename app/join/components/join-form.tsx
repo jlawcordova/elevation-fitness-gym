@@ -1,6 +1,7 @@
 import Gym from "@/app/lib/gym.interface";
-import JoinHeader from "./join-header";
 import GymPlan from "@/app/lib/gym-plan.interface";
+import JoinHeader from "./join-header";
+import JoinFormSubmit from "./join-form-submit";
 import submit from "./join-submit-action";
 
 export default function JoinForm({
@@ -14,6 +15,7 @@ export default function JoinForm({
 }) {
   const onSubmit = async (formData: FormData) => {
     const response = await submit(formData);
+
     if (response.ok) {
       onSubmitSuccess();
     }
@@ -74,11 +76,7 @@ export default function JoinForm({
             className="input mb-8 w-full rounded-none"
             required
           />
-          <input
-            type="submit"
-            value={"Submit"}
-            className="btn btn-primary md:mb-8 rounded-none"
-          ></input>
+          <JoinFormSubmit></JoinFormSubmit>
         </form>
       </div>
     </>
