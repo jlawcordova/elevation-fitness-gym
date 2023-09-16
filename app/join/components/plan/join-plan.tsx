@@ -1,9 +1,9 @@
 import { CheckIcon } from "@heroicons/react/24/solid";
-import JoinHeader from "./join-header";
 import Gym from "@/app/lib/gym.interface";
 import GymPlan from "@/app/lib/gym-plan.interface";
 import JoinPlanCard from "./join-plan-card";
 import Loader from "@/app/components/loader";
+import JoinHeader from "../join-header";
 
 const gymPlans: GymPlan[] = [
   {

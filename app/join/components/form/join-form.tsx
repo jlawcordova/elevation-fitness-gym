@@ -1,8 +1,8 @@
 import Gym from "@/app/lib/gym.interface";
 import GymPlan from "@/app/lib/gym-plan.interface";
-import JoinHeader from "./join-header";
 import JoinFormSubmit from "./join-form-submit";
 import submit from "./join-submit-action";
+import JoinHeader from "../join-header";
 
 export default function JoinForm({
   gym,

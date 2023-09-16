@@ -5,7 +5,7 @@ import Loader from "@/app/components/loader";
 
 import Gym from "@/app/lib/gym.interface";
 import JoinGymCard from "./join-gym-card";
-import JoinHeader from "./join-header";
+import JoinHeader from "../join-header";
 
 export default function JoinGym({ onJoin }: { onJoin: (gym: Gym) => void }) {
   const [gyms, setGyms] = useState<Gym[] | undefined>(undefined);

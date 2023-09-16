@@ -4,11 +4,12 @@ import { useEffect, useReducer, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Gym from "../lib/gym.interface";
-import JoinSteps from "./components/join-steps";
-import JoinGym from "./components/join-gym";
-import JoinPlan from "./components/join-plan";
 import GymPlan from "../lib/gym-plan.interface";
-import JoinForm from "./components/join-form";
+
+import JoinSteps from "./components/join-steps";
+import JoinGym from "./components/gym/join-gym";
+import JoinPlan from "./components/plan/join-plan";
+import JoinForm from "./components/form/join-form";
 
 enum JoinActionKind {
   joinGym,
@@ -50,20 +51,17 @@ function joinReducer(state: JoinState, action: JoinAction): JoinState {
         gymId: payload?.gymId,
         gym: payload?.gym,
       };
-      break;
     case JoinActionKind.chooseGymPlan:
       return {
         ...state,
         step: 2,
         gymPlan: payload?.gymPlan,
       };
-      break;
     case JoinActionKind.submit:
       return {
         ...state,
         step: 3,
       };
-      break;
     default:
       return state;
   }
