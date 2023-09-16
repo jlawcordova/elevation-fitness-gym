@@ -1,7 +1,17 @@
 import GymPlan from "@/app/lib/gym-plan.interface";
 import { CheckIcon } from "@heroicons/react/24/solid";
 
-export default function JoinPlanCard({ gymPlan }: { gymPlan: GymPlan }) {
+export default function JoinPlanCard({
+  gymPlan,
+  onChoose,
+}: {
+  gymPlan: GymPlan;
+  onChoose: (gymPlan: GymPlan) => void;
+}) {
+  const handleClick = (): void => {
+    onChoose(gymPlan);
+  };
+
   return (
     <div className="card bg-base-100 rounded-none">
       <div className="card-body justify-start">
@@ -23,7 +33,10 @@ export default function JoinPlanCard({ gymPlan }: { gymPlan: GymPlan }) {
           ))}
         </ul>
         <div className="card-actions w-full mt-4 flex-grow items-end">
-          <button className="btn btn-secondary w-full rounded-none">
+          <button
+            className="btn btn-secondary w-full rounded-none"
+            onClick={handleClick}
+          >
             Choose Plan
           </button>
         </div>

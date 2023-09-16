@@ -7,14 +7,17 @@ import Gym from "../lib/gym.interface";
 import JoinSteps from "./components/join-steps";
 import JoinGym from "./components/join-gym";
 import JoinPlan from "./components/join-plan";
+import GymPlan from "../lib/gym-plan.interface";
 
 enum JoinActionKind {
-  selectGym,
+  joinGym,
+  chooseGymPlan,
 }
 
 interface JoinActionPayload {
-  gymId: string | null;
-  gym: Gym | null;
+  gymId?: string | null;
+  gym?: Gym;
+  gymPlan?: GymPlan;
 }
 
 interface JoinAction {
@@ -24,20 +27,28 @@ interface JoinAction {
 
 interface JoinState {
   step: number;
-  gymId: string | null;
-  gym: Gym | null;
+  gymId?: string | null;
+  gym?: Gym;
+  gymPlan?: GymPlan;
 }
 
 function joinReducer(state: JoinState, action: JoinAction): JoinState {
   const { type, payload } = action;
 
   switch (type) {
-    case JoinActionKind.selectGym:
+    case JoinActionKind.joinGym:
       return {
         ...state,
         step: 1,
         gymId: payload.gymId,
         gym: payload.gym,
+      };
+      break;
+    case JoinActionKind.chooseGymPlan:
+      return {
+        ...state,
+        step: 2,
+        gymPlan: payload.gymPlan,
       };
       break;
     default:
@@ -55,16 +66,17 @@ export default function Join() {
     // another page (i.e. in app/gyms/page.tsx)
     step: gymIdSearchParam === null ? 0 : 1,
     gymId: gymIdSearchParam,
-    gym: null,
+    gym: undefined,
   });
 
+  // Retrieve the gym when a gym id is provided via search params.
   useEffect(() => {
     async function getGym() {
       const response = await fetch(`/api/gym/${gymIdSearchParam}`);
       const gym: Gym = await response.json();
 
       joinDispatch({
-        type: JoinActionKind.selectGym,
+        type: JoinActionKind.joinGym,
         payload: {
           gymId: gym.id,
           gym: gym,
@@ -79,10 +91,19 @@ export default function Join() {
 
   const handleGymJoin = (gym: Gym): void => {
     joinDispatch({
-      type: JoinActionKind.selectGym,
+      type: JoinActionKind.joinGym,
       payload: {
         gymId: gym.id,
         gym: gym,
+      },
+    });
+  };
+
+  const handleGymPlanChoose = (gymPlan: GymPlan): void => {
+    joinDispatch({
+      type: JoinActionKind.chooseGymPlan,
+      payload: {
+        gymPlan: gymPlan,
       },
     });
   };
@@ -92,11 +113,15 @@ export default function Join() {
       case 0:
         return <JoinGym onJoin={handleGymJoin}></JoinGym>;
       case 1:
-        if (joinState.gym === null) {
-          return <></>;
-        }
+        return (
+          <JoinPlan
+            gym={joinState.gym}
+            onChoose={handleGymPlanChoose}
+          ></JoinPlan>
+        );
 
-        return <JoinPlan gym={joinState.gym}></JoinPlan>;
+      case 2:
+        return <h1>Personal information section (coming soon!)</h1>;
       default:
         return <></>;
     }
