@@ -11,7 +11,7 @@ export default function Hero() {
           autoPlay={true}
           muted={true}
         >
-          <source src="/elevation-video.mov"></source>
+          <source src="/elevation-video.mp4"></source>
         </video>
       </div>
       <div className="hero-content text-center">
