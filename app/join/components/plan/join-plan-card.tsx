@@ -14,7 +14,7 @@ export default function JoinPlanCard({
 
   return (
     <div
-      className={`card bg-base-100 rounded-none ${
+      className={`card md:max-w-[14rem] bg-base-100 rounded-none ${
         gymPlan.isPopular ? "order-1" : "order-2 md:order-1"
       }`}
     >
@@ -25,18 +25,11 @@ export default function JoinPlanCard({
             <div className="badge badge-primary">Popular</div>
           )}
         </div>
-        <p className="mb-4 grow-0">{gymPlan.description}</p>
-        <p className="mb-4 grow-0 text-center">
-          <span className="text-4xl font-bold">₱{gymPlan.rate}</span>/month
+        <p className="mb-6 grow-0 text-center">
+          <span className="text-4xl font-bold">₱{gymPlan.rate}</span>
+          {gymPlan.subscription === "daily" ? "/day" : "/month"}
         </p>
-        <ul>
-          {gymPlan.features.map((feature, index) => (
-            <li key={index} className="flex gap-2">
-              <CheckIcon className="w-5 h-5 text-primary shrink-0" /> {feature}
-            </li>
-          ))}
-        </ul>
-        <div className="card-actions w-full mt-4 flex-grow items-end">
+        <div className="card-actions w-full mb-4">
           <button
             className="btn btn-secondary w-full rounded-none"
             onClick={handleClick}
@@ -44,6 +37,14 @@ export default function JoinPlanCard({
             Choose Plan
           </button>
         </div>
+        <p className="mb-4">{gymPlan.description}</p>
+        <ul className="flex flex-col flex-grow justify-end items-start">
+          {gymPlan.features.map((feature, index) => (
+            <li key={index} className="flex gap-2">
+              <CheckIcon className="w-5 h-5 text-primary shrink-0" /> {feature}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

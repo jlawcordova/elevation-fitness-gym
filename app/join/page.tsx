@@ -10,6 +10,7 @@ import JoinSteps from "./components/join-steps";
 import JoinGym from "./components/gym/join-gym";
 import JoinPlan from "./components/plan/join-plan";
 import JoinForm from "./components/form/join-form";
+import JoinVisit from "./components/visit/join-visit";
 
 enum JoinActionKind {
   joinGym,
@@ -145,6 +146,8 @@ export default function Join() {
             onSubmitSuccess={handleSubmitSuccess}
           ></JoinForm>
         );
+      case 3:
+        return <JoinVisit gym={joinState.gym}></JoinVisit>;
       default:
         return <></>;
     }
@@ -157,10 +160,12 @@ export default function Join() {
       <div className="bg-base-200">
         <div className="py-8">
           <h1 className="mb-2 text-center text-4xl md:text-6xl">
-            {"Let's do this!"}
+            {joinState.step < 3 ? "Let's do this!" : "All set!"}
           </h1>
           <p className="text-center">
-            {"You're a few steps closer to reaching new heights in fitness."}
+            {joinState.step < 3
+              ? "You're a few steps closer to reaching new heights in fitness."
+              : "You're ready to go to our gym facility!"}
           </p>
         </div>
         <div className="pb-8 md:pb-12 flex justify-center items-center">

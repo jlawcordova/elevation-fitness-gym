@@ -49,10 +49,7 @@ export default function JoinPlan({
   return (
     <>
       <div>
-        <JoinHeader
-          text={`Choose your plan at Elevation Fitness ${gym.name}`}
-        />
-        <div className="flex flex-col gap-4 md:flex-row">
+        <div className="flex flex-col gap-4 md:flex-row md:justify-center md:flex-wrap">
           {gymPlans.map((gymPlan, index) => (
             <JoinPlanCard
               key={index}
