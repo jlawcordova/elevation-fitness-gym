@@ -3,6 +3,7 @@
 import Button from "@/app/components/button";
 import styles from "./features.module.css";
 import { useEffect, useState } from "react";
+import Image, { StaticImageData } from "next/image";
 
 export default function Feature({
   name,
@@ -11,7 +12,7 @@ export default function Feature({
 }: {
   name: string;
   description: string;
-  image: string;
+  image: StaticImageData;
 }) {
   const [hovered, setHovered] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
@@ -48,24 +49,33 @@ export default function Feature({
     <>
       <div
         className={`${styles.featureMask} m-8 lg:-ml-16 first:lg:ml-0 h-[320px] lg:w-[380px] lg:h-[340px] bg-cover bg-no-repeat cursor-pointer lg:hover:scale-110`}
-        style={{ backgroundImage: `url(${image})` }}
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="w-full h-full bg-base-100 bg-opacity-50 flex items-center lg:bg-primary lg:bg-opacity-0 lg:hover:bg-opacity-75">
+        <div className="relative w-full h-full flex items-center">
           <div className="mx-8 lg:ml-28 lg:mr-16 w-full">
+            <Image
+              src={image}
+              alt={name}
+              className="absolute z-10 top-0 left-0 w-full h-full object-cover object-top"
+            ></Image>
+            <div
+              className={`absolute z-20 top-0 left-0 w-full h-full bg-base-100 bg-opacity-50 lg:bg-primary ${
+                hovered ? "lg:bg-opacity-75" : "lg:bg-opacity-0"
+              }`}
+            ></div>
             <h2
-              className={`mb-2 text-4xl font-bold uppercase ${
+              className={`relative z-30 mb-2 text-4xl font-bold uppercase ${
                 hovered ? "lg:text-2xl" : ""
               }`}
             >
               {name}
             </h2>
-            <p className={`mb-6 ${hovered ? "" : "lg:hidden"}`}>
+            <p className={`relative z-30 mb-6 ${hovered ? "" : "lg:hidden"}`}>
               {description}
             </p>
             <div
-              className={`flex justify-end lg:justify-center ${
+              className={`relative z-30 flex justify-end lg:justify-center ${
                 hovered ? "" : "lg:hidden"
               }`}
             >
