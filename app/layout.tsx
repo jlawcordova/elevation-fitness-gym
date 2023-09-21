@@ -20,11 +20,6 @@ export const metadata: Metadata = {
     description:
       "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
     siteName: "Elevation Fitness Gym",
-    images: [
-      {
-        url: "https://elevation-fitness-gym.vercel.app/banner.png",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -33,11 +28,6 @@ export const metadata: Metadata = {
     title: "Elevation Fitness Gym | Open-Air Gym in Davao",
     description:
       "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
-    images: [
-      {
-        url: "https://elevation-fitness-gym.vercel.app/banner.png",
-      },
-    ],
   },
 };
 
