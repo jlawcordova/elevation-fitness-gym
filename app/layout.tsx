@@ -13,6 +13,32 @@ export const metadata: Metadata = {
   title: "Elevation Fitness Gym | Open-Air Gym in Davao",
   description:
     "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
+  openGraph: {
+    type: "website",
+    url: "https://elevation-fitness-gym.vercel.app",
+    title: "Elevation Fitness Gym | Open-Air Gym in Davao",
+    description:
+      "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
+    siteName: "Elevation Fitness Gym",
+    images: [
+      {
+        url: "https://elevation-fitness-gym.vercel.app/banner.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@jlawcordova",
+    creator: "@jlawcordova",
+    title: "Elevation Fitness Gym | Open-Air Gym in Davao",
+    description:
+      "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
+    images: [
+      {
+        url: "https://elevation-fitness-gym.vercel.app/banner.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -22,43 +48,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://elevation-fitness-gym.vercel.app/"
-        />
-        <meta
-          property="og:title"
-          content="Elevation Fitness Gym | Open-Air Gym in Davao"
-        />
-        <meta
-          property="og:description"
-          content="We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments."
-        />
-        <meta
-          property="og:image"
-          content="https://elevation-fitness-gym.vercel.app/banner.png"
-        />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content="https://elevation-fitness-gym.vercel.app/"
-        />
-        <meta
-          property="twitter:title"
-          content="Elevation Fitness Gym | Open-Air Gym in Davao"
-        />
-        <meta
-          property="twitter:description"
-          content="We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments."
-        />
-        <meta
-          property="twitter:image"
-          content="https://elevation-fitness-gym.vercel.app/banner.png"
-        />
-      </head>
       <body className={`${roboto_condensed.className}`}>
         <Navbar></Navbar>
         {children}
