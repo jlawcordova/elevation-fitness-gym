@@ -15,19 +15,18 @@ export default function JoinPlanCard({
   return (
     <div
       className={`card md:max-w-[14rem] bg-base-100 rounded-none ${
-        gymPlan.isPopular ? "order-1" : "order-2 md:order-1"
+        gymPlan.tag !== undefined ? "order-1" : "order-2 md:order-1"
       }`}
     >
       <div className="card-body justify-start">
         <div className="mb-2 card-title flex justify-between">
           <h1 className="text-primary">{gymPlan.name}</h1>
-          {gymPlan.isPopular !== undefined && gymPlan.isPopular && (
-            <div className="badge badge-primary">Popular</div>
+          {gymPlan.tag !== undefined && (
+            <div className="badge badge-primary">{gymPlan.tag}</div>
           )}
         </div>
         <p className="mb-6 grow-0 text-center">
           <span className="text-4xl font-bold">₱{gymPlan.rate}</span>
-          {gymPlan.subscription === "daily" ? "/day" : "/month"}
         </p>
         <div className="card-actions w-full mb-4">
           <button
