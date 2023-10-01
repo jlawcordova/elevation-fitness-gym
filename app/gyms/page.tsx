@@ -3,6 +3,8 @@ import { GetGyms } from "../lib/gym.service";
 
 import GymSearch from "./components/gym-search";
 
+export const dynamic = "force-static";
+
 export default async function Gyms() {
   const gyms: Gym[] = await GetGyms();
 

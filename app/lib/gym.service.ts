@@ -3,8 +3,6 @@ import "server-only";
 import { cache } from "react";
 import Gym from "./gym.interface";
 
-export const revalidate = 60;
-
 const mockGyms: Gym[] = [
   {
     id: "03aa91a6-0bae-462f-90b9-e3ba66d1bec8",
@@ -73,9 +71,10 @@ const mockGyms: Gym[] = [
 
 export const GetGyms = cache(async (): Promise<Gym[]> => {
   const promise = new Promise<Gym[]>((resolve) => {
+    // Simulate a 1-second DB call.
     setTimeout(() => {
       resolve(mockGyms);
-    }, 0);
+    }, 1000);
   });
 
   const gyms = await promise;
@@ -85,6 +84,7 @@ export const GetGyms = cache(async (): Promise<Gym[]> => {
 
 export const GetGym = cache(async (id: string): Promise<Gym> => {
   const promise = new Promise<Gym>((resolve, reject) => {
+    // Simulate a 1-second DB call.
     setTimeout(() => {
       const gym = mockGyms.find((g) => g.id === id);
 
@@ -94,7 +94,7 @@ export const GetGym = cache(async (id: string): Promise<Gym> => {
       }
 
       resolve(gym);
-    }, 0);
+    }, 1000);
   });
 
   const gym = await promise;
