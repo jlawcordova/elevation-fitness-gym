@@ -13,18 +13,21 @@ const features = [
     description:
       "Who said you can't enjoy the breeze while you're breaking a sweat? Step into our open-air gym equipped with modern fitness gear.",
     image: openAirFeature,
+    url: "feature/open",
   },
   {
     name: "Affordable Fitness",
     description:
       "Elevation Fitness Gym promises affordable fitness for all - the gym newbie or the seasoned fitness enthusiast.",
     image: affordableFeature,
+    url: "feature/affordable",
   },
   {
     name: "Yearly Gains at Daily Prices",
     description:
       "Maximize your gains with our cost-effective yearly memberships. Train consistently, save effectively.",
     image: yearlyFeature,
+    url: "feature/yearly",
   },
 ];
 

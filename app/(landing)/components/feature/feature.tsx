@@ -1,18 +1,21 @@
 "use client";
 
-import Button from "@/app/components/button";
-import styles from "./features.module.css";
 import { useEffect, useState } from "react";
+import styles from "./features.module.css";
+import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
+import Button from "@/app/components/button";
 
 export default function Feature({
   name,
   description,
   image,
+  url,
 }: {
   name: string;
   description: string;
   image: StaticImageData;
+  url: string;
 }) {
   const [hovered, setHovered] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
@@ -79,7 +82,9 @@ export default function Feature({
                 hovered ? "" : "lg:hidden"
               }`}
             >
-              <Button type="secondary">Find out more</Button>
+              <Link href={url}>
+                <Button type="secondary">Find out more</Button>
+              </Link>
             </div>
           </div>
         </div>
