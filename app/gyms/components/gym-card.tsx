@@ -31,10 +31,12 @@ export default function GymCard({
             <PhoneIcon className="w-5 h-5 pr-1 inline" />
             <p>{gym.contact?.tel}</p>
           </div>
-          <div className="flex items-center ml-4">
-            <DevicePhoneMobileIcon className="w-5 h-5 pr-1 inline" />
-            <p>{gym.contact?.mobile}</p>
-          </div>
+          {gym.contact?.mobile && gym.contact.mobile.trim() !== "" && (
+            <div className="flex items-center ml-4">
+              <DevicePhoneMobileIcon className="w-5 h-5 pr-1 inline" />
+              <p>{gym.contact.mobile}</p>
+            </div>
+          )}
         </address>
         {selected ? (
           <div className="card-actions w-full md:w-96 lg:w-full block mt-4">
