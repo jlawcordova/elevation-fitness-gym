@@ -6,68 +6,17 @@ import { useSearchParams } from "next/navigation";
 import Gym from "../lib/gym.interface";
 import GymPlan from "../lib/gym-plan.interface";
 
+import {
+  JoinActionKind,
+  joinReducer,
+  type JoinState,
+} from "./joinReducer";
+
 import JoinSteps from "./components/join-steps";
 import JoinGym from "./components/gym/join-gym";
 import JoinPlan from "./components/plan/join-plan";
 import JoinForm from "./components/form/join-form";
 import JoinVisit from "./components/visit/join-visit";
-
-enum JoinActionKind {
-  joinGym,
-  chooseGymPlan,
-  submit,
-}
-
-interface JoinActionPayload {
-  gymId?: string | null;
-  gym?: Gym;
-  gymPlan?: GymPlan;
-}
-
-interface JoinAction {
-  type: JoinActionKind;
-  payload?: JoinActionPayload;
-}
-
-interface JoinState {
-  step: number;
-  gymId?: string | null;
-  gym?: Gym;
-  gymPlan?: GymPlan;
-}
-
-function joinReducer(state: JoinState, action: JoinAction): JoinState {
-  const { type, payload } = action;
-
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "instant",
-  });
-
-  switch (type) {
-    case JoinActionKind.joinGym:
-      return {
-        ...state,
-        step: 1,
-        gymId: payload?.gymId,
-        gym: payload?.gym,
-      };
-    case JoinActionKind.chooseGymPlan:
-      return {
-        ...state,
-        step: 2,
-        gymPlan: payload?.gymPlan,
-      };
-    case JoinActionKind.submit:
-      return {
-        ...state,
-        step: 3,
-      };
-    default:
-      return state;
-  }
-}
 
 export default function Join() {
   const searchParams = useSearchParams();
