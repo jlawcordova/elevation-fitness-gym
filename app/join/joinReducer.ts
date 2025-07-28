@@ -2,6 +2,7 @@ export enum JoinActionKind {
   joinGym,
   chooseGymPlan,
   submit,
+  back,
 }
 
 export interface JoinActionPayload {
@@ -51,6 +52,11 @@ export function joinReducer(state: JoinState, action: JoinAction): JoinState {
       return {
         ...state,
         step: 3,
+      };
+    case JoinActionKind.back:
+      return {
+        ...state,
+        step: state.step > 0 ? state.step - 1 : 0,
       };
     default:
       return state;
