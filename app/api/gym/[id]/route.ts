@@ -5,7 +5,21 @@ export async function GET(
   request: Request,
   { params }: { params: { id: string } },
 ) {
-  const gym = await GetGym(params.id);
+  try {
+    const gym = await GetGym(params.id);
 
-  return NextResponse.json(gym);
+    return NextResponse.json(gym);
+  } catch (e: any) {
+    if (e?.errorCode === 404) {
+      return NextResponse.json(
+        { error: e.error ?? "Gym not found." },
+        { status: 404 },
+      );
+    }
+
+    return NextResponse.json(
+      { error: "Unable to retrieve gym." },
+      { status: 500 },
+    );
+  }
 }
