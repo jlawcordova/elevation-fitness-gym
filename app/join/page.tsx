@@ -76,6 +76,12 @@ export default function Join() {
     });
   };
 
+  const handleBack = (): void => {
+    joinDispatch({
+      type: JoinActionKind.back,
+    });
+  };
+
   const getJoinBody = (step: number): React.ReactNode => {
     switch (step) {
       case 0:
@@ -123,6 +129,14 @@ export default function Join() {
         <div className="md:flex md:justify-center">
           <div className="p-4 pb-8 md:max-w-3xl flex flex-col flex-1">
             {joinBody}
+            {joinState.step > 0 && joinState.step < 3 && (
+              <button
+                className="btn btn-outline mt-4 w-fit rounded-none"
+                onClick={handleBack}
+              >
+                Back
+              </button>
+            )}
           </div>
         </div>
       </div>

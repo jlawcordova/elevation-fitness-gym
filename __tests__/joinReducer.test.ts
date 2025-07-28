@@ -54,3 +54,15 @@ test('submit action moves to step 3', () => {
 
   equal(result.step, 3);
 });
+
+test('back action decreases step', () => {
+  const initial: JoinState = {
+    step: 2,
+    gymId: sampleGym.id,
+    gym: sampleGym,
+    gymPlan: samplePlan,
+  };
+  const result = joinReducer(initial, { type: JoinActionKind.back });
+
+  equal(result.step, 1);
+});
