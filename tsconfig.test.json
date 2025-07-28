@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "target": "es2018",
+    "outDir": "test-build",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./types"],
+    "types": ["node-test"],
+    "moduleResolution": "node16"
+  },
+  "include": ["app/join/joinReducer.ts", "__tests__/**/*.ts"]
+}
