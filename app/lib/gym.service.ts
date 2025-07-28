@@ -67,6 +67,38 @@ const mockGyms: Gym[] = [
       lng: 125.628202,
     },
   },
+  {
+    id: "c0ec9aa9-0f13-4666-8176-05957ad78dd3",
+    name: "Boulevard",
+    address: {
+      line1: "Quezon Blvd",
+      line2: "",
+    },
+    contact: {
+      mobile: "",
+      tel: "(082) 308 3372",
+    },
+    location: {
+      lat: 7.064894,
+      lng: 125.614089,
+    },
+  },
+  {
+    id: "69a109ab-cbe3-4055-9d65-3c247c43841c",
+    name: "J.P. Laurel",
+    address: {
+      line1: "105 J.P. Laurel Ave",
+      line2: "",
+    },
+    contact: {
+      mobile: "",
+      tel: "(082) 308 0760",
+    },
+    location: {
+      lat: 7.084247,
+      lng: 125.612783,
+    },
+  },
 ];
 
 export const GetGyms = cache(async (): Promise<Gym[]> => {
