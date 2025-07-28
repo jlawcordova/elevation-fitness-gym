@@ -12,13 +12,13 @@ const roboto_condensed = Roboto_Condensed({
 export const metadata: Metadata = {
   title: "Elevation Fitness Gym | Open-Air Gym in Davao",
   description:
-    "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
+    "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipment.",
   openGraph: {
     type: "website",
     url: "https://elevation-fitness-gym.vercel.app",
     title: "Elevation Fitness Gym | Open-Air Gym in Davao",
     description:
-      "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
+      "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipment.",
     siteName: "Elevation Fitness Gym",
   },
   twitter: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     creator: "@jlawcordova",
     title: "Elevation Fitness Gym | Open-Air Gym in Davao",
     description:
-      "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipments.",
+      "We offer the most affordable gym membership in Davao City. Get access to an open-air gym facility and quality cardio and strength equipment.",
   },
 };
 
