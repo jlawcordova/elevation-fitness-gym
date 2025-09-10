@@ -36,8 +36,8 @@ export default function PrivacyPage() {
       <p className="mb-6">
         We do not sell your personal information. We may share limited data with
         service providers that help us operate our website and process join
-        requests. These providers are bound by contractual obligations to protect
-        your data.
+        requests. These providers are bound by contractual obligations to
+        protect your data.
       </p>
 
       <h2 className="text-xl font-semibold mb-2">Data Retention</h2>
@@ -57,14 +57,6 @@ export default function PrivacyPage() {
       <p className="mb-6">
         For questions about this policy, please contact us via our social media
         pages linked in the site footer or when you visit our gym.
-      </p>
-
-      <p className="mt-10">
-        Ready to proceed? Return to the {" "}
-        <Link className="link link-primary" href="/join">
-          Join page
-        </Link>
-        .
       </p>
     </main>
   );

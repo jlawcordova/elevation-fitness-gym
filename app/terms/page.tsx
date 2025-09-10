@@ -59,23 +59,6 @@ export default function TermsPage() {
         For questions about these Terms, please contact us via our social media
         pages linked in the site footer or when you visit our gym.
       </p>
-
-      <p className="mt-10">
-        Also see our{" "}
-        <Link
-          className="link link-primary"
-          href="/privacy"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Privacy Policy
-        </Link>
-        . Return to the{" "}
-        <Link className="link link-primary" href="/join">
-          Join page
-        </Link>
-        .
-      </p>
     </main>
   );
 }
