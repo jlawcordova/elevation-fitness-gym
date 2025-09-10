@@ -20,17 +20,17 @@ export default function Hero() {
             className="mb-8 text-6xl md:text-8xl uppercase font-normal leading-tight drop-shadow-2xl"
             style={{ textShadow: "0px 4px 12px #18181b" }}
           >
-            <span className="text-primary font-extrabold">Elevate</span>
+            <span className="block">Nowhere</span>
+            <span className="">to go but</span>
             <br />
-            <span className="block">your potential.</span>
-            <span className="">Level up your</span>
-            <br />
-            <span className="text-primary font-extrabold">fitness.</span>
+            <span className="text-primary font-extrabold text-8xl md:text-9xl">
+              Up
+            </span>
           </h1>
           <p className="max-w-lg mx-auto mb-8">
             With our state-of-the-art open-air gyms located in the vibrant city
-            of Davao, we offer an affordable and modern fitness experience like
-            no other.
+            of Davao, Elevation Fitness Gyms offer an affordable and modern
+            fitness experience like no other.
           </p>
           <Link href="/join">
             <Button>Join Now</Button>
