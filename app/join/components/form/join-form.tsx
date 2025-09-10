@@ -3,6 +3,7 @@ import GymPlan from "@/app/lib/gym-plan.interface";
 import JoinFormSubmit from "./join-form-submit";
 import submit from "./join-submit-action";
 import JoinHeader from "../join-header";
+import Link from "next/link";
 
 export default function JoinForm({
   gym,
@@ -75,9 +76,41 @@ export default function JoinForm({
             type="email"
             autoComplete="email"
             placeholder="juan.delacruz@example.com"
-            className="input mb-8 w-full rounded-none"
+            className="input mb-4 w-full rounded-none"
             required
           />
+          <div className="form-control mb-4">
+            <label className="label flex justify-start items-center cursor-pointer gap-3">
+              <input
+                id="acceptPrivacy"
+                name="acceptPrivacy"
+                type="checkbox"
+                className="checkbox mt-1"
+                required
+              />
+              <span className="label-text">
+                I have read and accept the{" "}
+                <Link
+                  href="/privacy"
+                  className="link link-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </Link>
+                {" and "}
+                <Link
+                  href="/terms"
+                  className="link link-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Terms &amp; Conditions
+                </Link>
+                .
+              </span>
+            </label>
+          </div>
           <JoinFormSubmit></JoinFormSubmit>
         </form>
       </div>
