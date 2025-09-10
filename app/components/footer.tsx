@@ -10,6 +10,12 @@ export default function Footer() {
         <Link href="/join" className="link link-hover">
           Join Now
         </Link>
+        <Link href="/privacy" className="link link-hover">
+          Privacy Policy
+        </Link>
+        <Link href="/terms" className="link link-hover">
+          Terms &amp; Conditions
+        </Link>
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
