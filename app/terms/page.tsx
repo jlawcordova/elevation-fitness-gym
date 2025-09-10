@@ -13,9 +13,9 @@ export default function TermsPage() {
       <h1 className="text-3xl font-bold mb-6">Terms and Conditions</h1>
 
       <p className="mb-6">
-        These Terms and Conditions ("Terms") govern your use of our website and
-        services. By submitting a join request or becoming a member, you agree to
-        these Terms.
+        These Terms and Conditions (&quot;Terms&quot;) govern your use of our
+        website and services. By submitting a join request or becoming a member,
+        you agree to these Terms.
       </p>
 
       <h2 className="text-xl font-semibold mb-2">Membership</h2>
@@ -42,15 +42,16 @@ export default function TermsPage() {
       <h2 className="text-xl font-semibold mb-2">Cancellations and Changes</h2>
       <p className="mb-6">
         Cancellation, freeze, and transfer policies may differ per branch and
-        plan. Please inquire at the gym for details. We may update these Terms as
-        needed to reflect changes in our services.
+        plan. Please inquire at the gym for details. We may update these Terms
+        as needed to reflect changes in our services.
       </p>
 
       <h2 className="text-xl font-semibold mb-2">Liability</h2>
       <p className="mb-6">
         To the extent permitted by law, the gym is not responsible for injuries
         or losses resulting from misuse of equipment or failure to follow
-        instructions. Consult your physician before starting any fitness program.
+        instructions. Consult your physician before starting any fitness
+        program.
       </p>
 
       <h2 className="text-xl font-semibold mb-2">Contact</h2>
@@ -60,11 +61,16 @@ export default function TermsPage() {
       </p>
 
       <p className="mt-10">
-        Also see our {" "}
-        <Link className="link link-primary" href="/privacy" target="_blank" rel="noopener noreferrer">
+        Also see our{" "}
+        <Link
+          className="link link-primary"
+          href="/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Privacy Policy
         </Link>
-        . Return to the {" "}
+        . Return to the{" "}
         <Link className="link link-primary" href="/join">
           Join page
         </Link>
@@ -73,4 +79,3 @@ export default function TermsPage() {
     </main>
   );
 }
-
