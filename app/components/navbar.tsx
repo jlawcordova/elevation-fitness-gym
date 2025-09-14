@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-50 navbar bg-base-100 shadow-sm">
       <div className="flex-1">
-        <Link href="/" className="p-2 flex">
+        <Link href="/" className="p-2 flex" aria-label="Elevation Fitness Gym home">
           <Image
             alt="Elevation fitness gym logo"
             src="/elevation-logo.svg"

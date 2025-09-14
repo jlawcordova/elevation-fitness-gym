@@ -26,7 +26,7 @@ export default function Hero() {
             <span className="block">Nowhere</span>
             <span className="">to go but</span>
             <br />
-            <span className="text-primary font-extrabold text-8xl md:text-9xl">
+            <span className="text-[#F6212C] font-extrabold text-8xl md:text-9xl">
               Up
             </span>
           </h1>
