@@ -22,7 +22,7 @@ export default function GymCard({
       } mb-4 card rounded-none cursor-pointer shadow-xl transition-colors`}
       onClick={handleCardClick}
     >
-      <div className="card-body">
+      <div className="card-body px-4 py-4">
         <h2 className="card-title">{gym.name}</h2>
         <p className="leading-tight">{gym.address.line1}</p>
         <p className="leading-tight mb-2">{gym.address.line2 ?? "\u00A0"}</p>
@@ -39,7 +39,7 @@ export default function GymCard({
           )}
         </address>
         {selected ? (
-          <div className="card-actions w-full md:w-96 lg:w-full block mt-4">
+          <div className="card-actions w-full md:w-96 lg:w-full block">
             <Link href={`/join?gymId=${gym.id}`}>
               <button className="btn btn-secondary w-full md:w-96 lg:w-full rounded-none">
                 Join Here

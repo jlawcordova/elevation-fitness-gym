@@ -4,11 +4,14 @@ import { useState } from "react";
 import { GymList } from "./gym-list";
 import Gym from "../../lib/gym.interface";
 import GymMap from "./gym-map";
+import GymViewToggle, { GymView } from "./gym-view-toggle";
+import GymCard from "./gym-card";
 
 export default function GymSearch({ gyms }: { gyms: Gym[] }) {
   const [selectedGym, setSelectedGym] = useState<Gym | undefined>(
     gyms.length > 0 ? gyms[0] : undefined,
   );
+  const [view, setView] = useState<GymView>(GymView.List);
 
   function handleGymSelect(gym: Gym) {
     setSelectedGym(gym);
@@ -22,15 +25,30 @@ export default function GymSearch({ gyms }: { gyms: Gym[] }) {
           Time to elevate your fitness.
         </h1>
         <p>Choose a gym near you to view available membership options.</p>
+        <GymViewToggle view={view} onViewChange={setView} />
       </div>
-      <div className="z-10 overflow-auto lg:max-h-[calc(100vh-4rem)] lg:row-start-1 lg:col-start-1 lg:w-[24rem]">
+      <div
+        className={`z-10 overflow-x-hidden overflow-y-auto lg:max-h-[calc(100vh-4rem)] lg:row-start-1 lg:col-start-1 lg:w-[24rem] ${
+          view === GymView.Map ? "hidden lg:block" : ""
+        }`}
+        style={{ scrollbarColor: "#B3161F #18181B" }} // Primary and base-200
+      >
         <GymList
           gyms={gyms}
           selectedGym={selectedGym}
           onGymSelect={handleGymSelect}
         />
       </div>
-      <div className="hidden lg:block lg:row-start-1 lg:col-start-1 lg:col-span-12">
+      <div
+        className={`${
+          view === GymView.Map ? "" : "hidden lg:block"
+        } relative lg:row-start-1 lg:col-start-1 lg:col-span-12`}
+      >
+        {view === GymView.Map && selectedGym && (
+          <div className="pt-2 px-4 lg:hidden absolute top-0 left-0 right-0 z-10">
+            <GymCard gym={selectedGym} selected onSelect={handleGymSelect} />
+          </div>
+        )}
         <GymMap
           gyms={gyms}
           selectedGym={selectedGym}

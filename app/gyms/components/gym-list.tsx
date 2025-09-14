@@ -16,7 +16,7 @@ export function GymList({
   };
 
   return (
-    <div className="px-4 lg:pt-8 lg:w-96 lg:bg-base-100 lg:bg-opacity-20">
+    <div className="px-4 lg:pe-8 lg:pt-8 lg:w-96 lg:bg-base-100 lg:bg-opacity-20">
       {gyms.map((gym, i) => (
         <Transition
           key={i}

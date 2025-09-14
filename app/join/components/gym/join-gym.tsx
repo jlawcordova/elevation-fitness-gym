@@ -28,7 +28,11 @@ export default function JoinGym({ onJoin }: { onJoin: (gym: Gym) => void }) {
   return (
     <>
       <JoinHeader text={"Choose a branch you'd like to join."} />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div
+        className={`grid grid-cols-1 gap-4 ${
+          gyms != null ? "md:grid-cols-2" : ""
+        }`}
+      >
         {gyms?.map((gym, index) => (
           <JoinGymCard key={index} gym={gym} onJoin={handleJoin}></JoinGymCard>
         )) || (
