@@ -1,6 +1,5 @@
 "use client";
 
-import Button from "@/app/components/button";
 import styles from "./features.module.css";
 import { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
@@ -71,16 +70,9 @@ export default function Feature({
             >
               {name}
             </h2>
-            <p className={`relative z-30 mb-6 ${hovered ? "" : "lg:hidden"}`}>
+            <p className={`relative z-30 ${hovered ? "" : "lg:hidden"}`}>
               {description}
             </p>
-            <div
-              className={`relative z-30 flex justify-end lg:justify-center ${
-                hovered ? "" : "lg:hidden"
-              }`}
-            >
-              <Button type="secondary">Find out more</Button>
-            </div>
           </div>
         </div>
       </div>
