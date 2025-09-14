@@ -10,6 +10,9 @@ export default function Hero() {
           loop={true}
           autoPlay={true}
           muted={true}
+          playsInline={true}
+          preload="auto"
+          aria-hidden="true"
         >
           <source src="/elevation-video.mp4"></source>
         </video>
