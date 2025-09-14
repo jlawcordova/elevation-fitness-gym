@@ -26,14 +26,15 @@ export default function Hero() {
             <span className="block">Nowhere</span>
             <span className="">to go but</span>
             <br />
-            <span className="text-primary font-extrabold text-8xl md:text-9xl">
+            <span className="text-[#FF232E] font-extrabold text-8xl md:text-9xl">
               Up
             </span>
           </h1>
           <p className="max-w-lg mx-auto mb-8">
-            With our state-of-the-art open-air gyms located in the vibrant city
-            of Davao, Elevation Fitness Gyms offer an affordable and modern
-            fitness experience like no other.
+            <b>Premium quality doesn&apos;t have to be expensive</b>. With our
+            state-of-the-art open-air gyms located in Davao City, Panabo and
+            Tagum, Elevation Fitness Gym offers an affordable and modern fitness
+            experience in the Davao Region like no other.
           </p>
           <Link href="/join">
             <Button>Join Now</Button>
