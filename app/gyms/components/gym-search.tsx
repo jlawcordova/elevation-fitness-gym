@@ -4,8 +4,8 @@ import { useState } from "react";
 import { GymList } from "./gym-list";
 import Gym from "../../lib/gym.interface";
 import GymMap from "./gym-map";
-import GymCardTight from "./gym-card-tight";
 import GymViewToggle, { GymView } from "./gym-view-toggle";
+import GymCard from "./gym-card";
 
 export default function GymSearch({ gyms }: { gyms: Gym[] }) {
   const [selectedGym, setSelectedGym] = useState<Gym | undefined>(
@@ -21,26 +21,39 @@ export default function GymSearch({ gyms }: { gyms: Gym[] }) {
     <div className="md:grid lg:grid-cols-12 lg:gap-4">
       <div className="hidden z-10 bg-gradient-to-b from-base-200 lg:block lg:row-start-1 lg:col-start-1 lg:col-span-12 h-32"></div>
       <div className="pt-8 mx-4 mb-6 z-20 lg:max-h-0 lg:order-2 lg:row-start-1 lg:col-start-6 lg:col-span-6">
-        <h1 className="text-4xl font-bold mb-2">Time to elevate your fitness.</h1>
+        <h1 className="text-4xl font-bold mb-2">
+          Time to elevate your fitness.
+        </h1>
         <p>Choose a gym near you to view available membership options.</p>
         <GymViewToggle view={view} onViewChange={setView} />
       </div>
       <div
-        className={`z-10 overflow-auto lg:max-h-[calc(100vh-4rem)] lg:row-start-1 lg:col-start-1 lg:w-[24rem] ${
+        className={`z-10 overflow-x-hidden overflow-y-auto lg:max-h-[calc(100vh-4rem)] lg:row-start-1 lg:col-start-1 lg:w-[24rem] ${
           view === GymView.Map ? "hidden lg:block" : ""
         }`}
+        style={{ scrollbarColor: "#B3161F #18181B" }} // Primary and base-200
       >
-        <GymList gyms={gyms} selectedGym={selectedGym} onGymSelect={handleGymSelect} />
+        <GymList
+          gyms={gyms}
+          selectedGym={selectedGym}
+          onGymSelect={handleGymSelect}
+        />
       </div>
       <div
-        className={`${view === GymView.Map ? "" : "hidden lg:block"} relative lg:row-start-1 lg:col-start-1 lg:col-span-12`}
+        className={`${
+          view === GymView.Map ? "" : "hidden lg:block"
+        } relative lg:row-start-1 lg:col-start-1 lg:col-span-12`}
       >
         {view === GymView.Map && selectedGym && (
-          <div className="lg:hidden absolute top-0 left-0 right-0 z-10">
-            <GymCardTight gym={selectedGym} selected onSelect={handleGymSelect} />
+          <div className="pt-2 px-4 lg:hidden absolute top-0 left-0 right-0 z-10">
+            <GymCard gym={selectedGym} selected onSelect={handleGymSelect} />
           </div>
         )}
-        <GymMap gyms={gyms} selectedGym={selectedGym} onGymSelect={handleGymSelect}></GymMap>
+        <GymMap
+          gyms={gyms}
+          selectedGym={selectedGym}
+          onGymSelect={handleGymSelect}
+        ></GymMap>
       </div>
     </div>
   );
