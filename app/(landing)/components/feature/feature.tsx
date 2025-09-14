@@ -2,7 +2,7 @@
 
 import Button from "@/app/components/button";
 import styles from "./features.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 
 export default function Feature({
@@ -16,6 +16,8 @@ export default function Feature({
 }) {
   const [hovered, setHovered] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   // Ignore hover on smaller (md breakpoint) screens.
   // Check window availability to avoid getting triggered on server.
@@ -35,6 +37,21 @@ export default function Feature({
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !imageRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const offset = rect.top * 0.2;
+      imageRef.current.style.transform = `translateY(${offset}px)`;
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleMouseOver = () => {
     if (windowWidth !== undefined && windowWidth > 1024) {
       setHovered(true);
@@ -48,6 +65,7 @@ export default function Feature({
   return (
     <>
       <div
+        ref={containerRef}
         className={`${styles.featureMask} m-8 lg:-ml-16 first:lg:ml-0 h-[320px] lg:w-[380px] lg:h-[340px] bg-cover bg-no-repeat cursor-pointer lg:hover:scale-110`}
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
@@ -55,9 +73,11 @@ export default function Feature({
         <div className="relative w-full h-full flex items-center">
           <div className="mx-8 lg:ml-28 lg:mr-16 w-full">
             <Image
+              ref={imageRef}
               src={image}
               alt={name}
               className="absolute z-10 top-0 left-0 w-full h-full object-cover object-top"
+              style={{ willChange: "transform", transform: "translateY(0px)" }}
             ></Image>
             <div
               className={`absolute z-20 top-0 left-0 w-full h-full bg-base-100 bg-opacity-50 lg:bg-primary ${
