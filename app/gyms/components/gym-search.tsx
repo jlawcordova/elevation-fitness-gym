@@ -4,7 +4,7 @@ import { useState } from "react";
 import { GymList } from "./gym-list";
 import Gym from "../../lib/gym.interface";
 import GymMap from "./gym-map";
-import GymCard from "./gym-card";
+import GymCardTight from "./gym-card-tight";
 import GymViewToggle, { GymView } from "./gym-view-toggle";
 
 export default function GymSearch({ gyms }: { gyms: Gym[] }) {
@@ -37,7 +37,7 @@ export default function GymSearch({ gyms }: { gyms: Gym[] }) {
       >
         {view === GymView.Map && selectedGym && (
           <div className="lg:hidden absolute top-0 left-0 right-0 z-10">
-            <GymCard gym={selectedGym} selected onSelect={handleGymSelect} />
+            <GymCardTight gym={selectedGym} selected onSelect={handleGymSelect} />
           </div>
         )}
         <GymMap gyms={gyms} selectedGym={selectedGym} onGymSelect={handleGymSelect}></GymMap>
