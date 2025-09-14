@@ -57,10 +57,21 @@ export default function Footer() {
           </Link>
         </div>
       </nav>
-      <aside>
+      <aside className="flex w-full justify-between items-center">
         <p>
           Copyright © {new Date().getFullYear()} - All right reserved by
           Premier Elevation Fitness Gym
+        </p>
+        <p className="text-slate-500">
+          <span>
+            Powered by{" "}
+            <Link
+              href="https://www.linkedin.com/in/jlawcordova/"
+              className="underline"
+            >
+              J. Law.
+            </Link>
+          </span>
         </p>
       </aside>
     </footer>
