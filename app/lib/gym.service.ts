@@ -99,6 +99,37 @@ const mockGyms: Gym[] = [
       lng: 125.612783,
     },
   },
+  {
+    id: "1a24c51f-c71d-49b0-8e35-2248ed2fb0e4",
+    name: "National Highway",
+    address: {
+      line1: "Cuntapay Building, National Highway, Tagum, Davao del Norte",
+    },
+    contact: {
+      mobile: "09171940926",
+      tel: "(082) 227 0419",
+    },
+    location: {
+      lat: 7.446973,
+      lng: 125.809264,
+    },
+  },
+  {
+    id: "da866916-c837-4fa0-a235-27a817f57335",
+    name: "Panabo",
+    address: {
+      line1:
+        "3/F R.J.A. Building, Purok 4A, Tadeco Road, Brgy. San Francisco, Panabo City, Davao del Norte",
+    },
+    contact: {
+      mobile: "09171852513",
+      tel: "(084) 2270438",
+    },
+    location: {
+      lat: 7.309302,
+      lng: 125.683049,
+    },
+  },
 ];
 
 export const GetGyms = cache(async (): Promise<Gym[]> => {
