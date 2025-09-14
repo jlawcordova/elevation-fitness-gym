@@ -77,12 +77,12 @@ export default function Footer() {
           Copyright © {new Date().getFullYear()} - All right reserved by
           Premier Elevation Fitness Gym
         </p>
-        <p className="text-slate-500">
+        <p>
           <span>
             Powered by{" "}
             <Link
               href="https://www.linkedin.com/in/jlawcordova/"
-              className="underline"
+              className="underline text-[#FF232E]"
             >
               J. Law.
             </Link>
