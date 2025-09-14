@@ -149,17 +149,14 @@ export const GetGyms = cache(async (): Promise<Gym[]> => {
 
 export const GetGym = cache(async (id: string): Promise<Gym> => {
   const promise = new Promise<Gym>((resolve, reject) => {
-    // Simulate a 1-second DB call.
-    setTimeout(() => {
-      const gym = mockGyms.find((g) => g.id === id);
+    const gym = mockGyms.find((g) => g.id === id);
 
-      if (gym === undefined) {
-        reject({ errorCode: 404, error: "Gym not found." });
-        return;
-      }
+    if (gym === undefined) {
+      reject({ errorCode: 404, error: "Gym not found." });
+      return;
+    }
 
-      resolve(gym);
-    }, 1000);
+    resolve(gym);
   });
 
   const gym = await promise;
