@@ -8,8 +8,8 @@ const mockGyms: Gym[] = [
     id: "03aa91a6-0bae-462f-90b9-e3ba66d1bec8",
     name: "Sta. Ana",
     address: {
-      line1: "6th floor, Alyvea Building Corporate Center",
-      line2: "Corner Sta. Ana Avenue, Leon Guerrero St.",
+      line1: "6th floor, Alyvea Building, Sta. Ana Avenue",
+      line2: "Leon Guerrero St., Davao City, Davao del Sur",
     },
     contact: {
       mobile: "09171002469",
@@ -25,6 +25,7 @@ const mockGyms: Gym[] = [
     name: "Buhangin",
     address: {
       line1: "Buhangin-Lapanday Road, KM 5",
+      line2: "Davao City, Davao del Sur",
     },
     contact: {
       mobile: "09171125912",
@@ -40,7 +41,7 @@ const mockGyms: Gym[] = [
     name: "Ecoland",
     address: {
       line1: "Quimpo Blvd, Talomo",
-      line2: "",
+      line2: "Davao City, Davao del Sur",
     },
     contact: {
       mobile: "09171020703",
@@ -55,8 +56,8 @@ const mockGyms: Gym[] = [
     id: "acd6dea8-e524-4050-8c67-30faba2e2fe7",
     name: "Lanang",
     address: {
-      line1: "71 J.P. Laurel Ave, Agdao",
-      line2: "",
+      line1: "Jureza Compound, Lanang",
+      line2: "Davao City, Davao del Sur",
     },
     contact: {
       mobile: "09171125912",
@@ -71,11 +72,11 @@ const mockGyms: Gym[] = [
     id: "c0ec9aa9-0f13-4666-8176-05957ad78dd3",
     name: "Boulevard",
     address: {
-      line1: "Quezon Blvd",
-      line2: "",
+      line1: "Quezon Boulevard, Brgy. 37-D Poblacion",
+      line2: "Davao City, Davao del Sur",
     },
     contact: {
-      mobile: "",
+      mobile: "09171588708",
       tel: "(082) 308 3372",
     },
     location: {
@@ -87,8 +88,8 @@ const mockGyms: Gym[] = [
     id: "69a109ab-cbe3-4055-9d65-3c247c43841c",
     name: "J.P. Laurel",
     address: {
-      line1: "105 J.P. Laurel Ave",
-      line2: "",
+      line1: "105 J.P. Laurel Ave, Poblacion District",
+      line2: "Davao City, Davao del Sur",
     },
     contact: {
       mobile: "",
@@ -103,7 +104,8 @@ const mockGyms: Gym[] = [
     id: "1a24c51f-c71d-49b0-8e35-2248ed2fb0e4",
     name: "National Highway",
     address: {
-      line1: "Cuntapay Building, National Highway, Tagum, Davao del Norte",
+      line1: "Cuntapay Building, National Highway",
+      line2: "Tagum, Davao del Norte",
     },
     contact: {
       mobile: "09171940926",
@@ -118,8 +120,8 @@ const mockGyms: Gym[] = [
     id: "da866916-c837-4fa0-a235-27a817f57335",
     name: "Panabo",
     address: {
-      line1:
-        "3/F R.J.A. Building, Purok 4A, Tadeco Road, Brgy. San Francisco, Panabo City, Davao del Norte",
+      line1: "3/F R.J.A. Building, Purok 4A, Tadeco Road",
+      line2: "Brgy. San Francisco, Panabo City, Davao del Norte",
     },
     contact: {
       mobile: "09171852513",
