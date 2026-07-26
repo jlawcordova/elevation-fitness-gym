@@ -132,6 +132,51 @@ const mockGyms: Gym[] = [
       lng: 125.683049,
     },
   },
+  {
+    id: "a04a9ec0-8846-4fec-81d4-ad6002a39994",
+    name: "Toril",
+    address: {
+      line1: "Maharlika Hwy, Toril",
+      line2: "Davao City, 8000 Davao del Sur",
+    },
+    contact: {
+      mobile: "09173193284",
+    },
+    location: {
+      lat: 7.025905182736987,
+      lng: 125.50511464972415,
+    },
+  },
+  {
+    id: "4839c4b0-0feb-4233-8ea9-b54f51d151da",
+    name: "Cabantian",
+    address: {
+      line1: "Indangan Road, KM-10 Cabantian Road",
+      line2: "Buhangin, Davao City, 8000 Davao del Sur",
+    },
+    contact: {
+      mobile: "09171862521",
+    },
+    location: {
+      lat: 7.1371692792429835,
+      lng: 125.61064298407862,
+    },
+  },
+  {
+    id: "f6314125-6581-4121-af2e-f22f10a708f8",
+    name: "Airport",
+    address: {
+      line1: "Carlos P. Garcia Highway",
+      line2: "Buhangin, Davao City, Davao del Sur",
+    },
+    contact: {
+      mobile: "09171696378",
+    },
+    location: {
+      lat: 7.126623620001701,
+      lng: 125.63494219591392,
+    },
+  },
 ];
 
 export const GetGyms = cache(async (): Promise<Gym[]> => {
